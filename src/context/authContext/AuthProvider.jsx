@@ -10,14 +10,15 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { useLocation } from "react-router";
+
+
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [stateData, setStateData] = useState(null);
   const [error, setError] = useState(null);
-  const location = useLocation();
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

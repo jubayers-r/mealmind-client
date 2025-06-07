@@ -13,14 +13,11 @@ const navLinks = (
     <NavLink to={"/"}>
       <p className="hover:text-[#00684a]">Home</p>
     </NavLink>
-    <NavLink to={"/recipes"}>
-      <p className="hover:text-[#00684a]">All Recipes</p>
+    <NavLink to={"/foods"}>
+      <p className="hover:text-[#00684a]">All Foods</p>
     </NavLink>
-    <NavLink to={"/addRecipe"}>
-      <p className="hover:text-[#00684a]">Add Recipe</p>
-    </NavLink>
-    <NavLink to={"/myRecipes"}>
-      <p className="hover:text-[#00684a]">My Recipes</p>
+    <NavLink to={"/gallery"}>
+      <p className="hover:text-[#00684a]">Gallery</p>
     </NavLink>
   </>
 );

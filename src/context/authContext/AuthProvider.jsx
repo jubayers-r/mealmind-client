@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     setError(null);
-  }, [location.pathname]);
+  }, []);
 
   const logIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
   const register = (email, password) => createUserWithEmailAndPassword(auth, email, password);

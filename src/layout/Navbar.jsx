@@ -23,20 +23,20 @@ const navLinks = (
 );
 const authenticationLG = (
   <div className=" hidden sm:flex gap-4 ">
-    <Link to={"/signup"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
+    <Link to={"/register"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
       Sign Up
     </Link>
-    <Link to={"/signin"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
+    <Link to={"/login"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
       Sign In
     </Link>
   </div>
 );
 const authenticationSM = (
   <div className="flex gap-2 my-2">
-    <Link to={"/signup"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
+    <Link to={"/register"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
       Sign Up
     </Link>
-    <Link to={"/signin"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
+    <Link to={"/login"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
       Sign In
     </Link>
   </div>
@@ -83,7 +83,7 @@ const Navbar = () => {
                 />
               </div>
               <h3 className="text-xl sm:text-3xl lg:text-3xl font-semibold font-[Poetsen_One]">
-                TasteScript
+                MealMind
               </h3>
             </div>
           </Link>

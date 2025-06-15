@@ -5,9 +5,10 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
+import Swal from "sweetalert2";
 
 const Signup = () => {
-  const { signup, googleLogin, stateData, error, setError, setUser } =
+  const { register, googleLogin, stateData, error, setError, setUser } =
     use(AuthContext);
   const [show, setShow] = useState(false);
   const location = useLocation();
@@ -26,7 +27,7 @@ const Signup = () => {
         "Minimum password length needs to be 6, and should include atleast one Uppercase and one Lowercase alphabet"
       );
     } else {
-      signup(email, password)
+      register(email, password)
         .then(() => {
           updateProfile(auth.currentUser, {
             displayName: name,
@@ -57,6 +58,11 @@ const Signup = () => {
               .then(() => {
                 setUser(user);
                 navigate(stateData ? stateData : "/");
+                Swal.fire({
+                  title: "User Registration Successful",
+                  text: "You are redirected to your desired page",
+                  icon: "success",
+                });
               });
           });
         })

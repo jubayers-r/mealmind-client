@@ -43,7 +43,7 @@ const authenticationSM = (
 );
 
 const Navbar = () => {
-  const { user, logout, loading } = use(AuthContext);
+  const { user, logOut, loading } = use(AuthContext);
   return (
     <div className="bg-base-100 shadow-sm">
       <div className="w-9/11 mx-auto navbar">
@@ -149,7 +149,7 @@ const Navbar = () => {
                   </div>
                   <hr className="text-gray-300" />
                   <button
-                    onClick={() => logout()}
+                    onClick={() => logOut()}
                     className="lg:text-lg font-semibold hover:bg-gray-200 rounded-lg gap-2 p-2 flex items-center "
                   >
                     <IoLogOutOutline size={25} />

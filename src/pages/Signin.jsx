@@ -3,10 +3,11 @@ import { AuthContext } from "../context/authContext/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
 
 const Signin = () => {
   const {
-    signin,
+    logIn,
     googleLogin,
     error,
     stateData,
@@ -25,7 +26,7 @@ const Signin = () => {
 
     if (action === "signin") {
       // handle login
-      signin(email, password)
+      logIn(email, password)
         .then((res) => {
           setUser(res.user);
           const authInfo = {
@@ -42,6 +43,11 @@ const Signin = () => {
             .then((res) => res.json())
             .then(() => {
               navigate(stateData ? stateData : "/");
+              Swal.fire({
+                title: "User Login Successful",
+                text: "You are redirected to your desired page",
+                icon: "success",
+              });
             });
         })
         .catch((error) => setError(error.message));
@@ -89,7 +95,6 @@ const Signin = () => {
 
           <label className="label">Email</label>
           <input
-            dark:text-black
             name="email"
             type="email"
             className="input dark:text-black"
@@ -100,7 +105,6 @@ const Signin = () => {
           <div className="relative">
             <label className="label ">Password</label>
             <input
-              dark:text-black
               name="password"
               type={show ? "text" : "password"}
               className="input dark:text-black"

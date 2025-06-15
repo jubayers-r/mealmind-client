@@ -141,8 +141,13 @@ const Signin = () => {
           </button>
           <button
             onClick={() =>
-              googleLogin().then(() =>
-                navigate(stateData ? `${stateData}` : "/")
+              googleLogin().then(
+                () => navigate(stateData ? `${stateData}` : "/"),
+                Swal.fire({
+                  title: "User Login Successful",
+                  text: "You are redirected to your desired page",
+                  icon: "success",
+                })
               )
             }
             className="btn hover:border hover:border-black flex gap-2"

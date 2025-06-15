@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router";
 import LogIn from "../pages/Signin";
 import Register from "../pages/Signup";
 import Home from "../pages/Home";
+import AllFoods from "../pages/AllFoods";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ export const router = createBrowserRouter([
      {
        path: "register",
        Component: Register
+     },
+     {
+       path: "foods",
+       Component: AllFoods,
+       loader: ()=> fetch("http://localhost:3000/foods")
      },
     ],
   },

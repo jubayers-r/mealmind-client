@@ -90,7 +90,6 @@ const Signup = () => {
 
           <label className="label">Name</label>
           <input
-            dark:text-black
             name="name"
             type="text"
             className="input dark:text-black"
@@ -100,7 +99,6 @@ const Signup = () => {
 
           <label className="label">Email</label>
           <input
-            dark:text-black
             name="email"
             type="email"
             className="input dark:text-black"
@@ -110,7 +108,6 @@ const Signup = () => {
 
           <label className="label">PhotoURL</label>
           <input
-            dark:text-black
             name="url"
             type="url"
             className="input dark:text-black"
@@ -120,7 +117,6 @@ const Signup = () => {
           <div className="relative">
             <label className="label ">Password</label>
             <input
-              dark:text-black
               name="password"
               type={show ? "text" : "password"}
               className="input dark:text-black"

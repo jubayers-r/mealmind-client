@@ -8,11 +8,11 @@ const MyOrders = () => {
   const { user } = use(AuthContext);
   const [data, setData] = useState([]);
 
-  useEffect(()=>{
-      axios
-        .get(`http://localhost:3000/myOrders?email=${user?.email}`)
-        .then((res) => setData(res.data));
-  },[])
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/myOrders?email=${user?.email}`)
+      .then((res) => setData(res.data));
+  }, [data]);
 
   return (
     <div>
@@ -25,10 +25,9 @@ const MyOrders = () => {
             <th className="border">(Click to) Delete</th>
           </tr>
         </thead>
-        {
-            data.map((item, i) => <OrdersTable key={i} item={item}/>)
-        }
-
+        {data.map((item, i) => (
+          <OrdersTable key={i} item={item} />
+        ))}
       </table>
     </div>
   );

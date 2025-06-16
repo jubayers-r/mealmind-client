@@ -5,6 +5,7 @@ import Register from "../pages/Signup";
 import Home from "../pages/Home";
 import AllFoods from "../pages/AllFoods";
 import FoodDetails from "../pages/FoodDetails";
+import Gallery from "../pages/Gallery";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
      {
        path: "register",
        Component: Register
+     },
+     {
+       path: "gallery",
+       Component: Gallery
      },
      {
        path: "foodDetails/:id",

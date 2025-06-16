@@ -60,7 +60,7 @@ const FoodCard = ({ food }) => {
           </Link>
           <div className="flex justify-center my-2">
             <Link to={`/foodDetails/${_id}`}>
-              <button className="btn hover:bg-[#00ed64] hover:rounded-full hover:border hover:border-black btn-lg flex btn w-fit my-3">
+              <button className="btn hover:bg-[#00ed64] hover:rounded-full hover:border hover:border-black btn-lg flex w-fit my-3">
                 See Details
               </button>
             </Link>

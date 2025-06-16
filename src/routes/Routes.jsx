@@ -4,6 +4,7 @@ import LogIn from "../pages/Signin";
 import Register from "../pages/Signup";
 import Home from "../pages/Home";
 import AllFoods from "../pages/AllFoods";
+import FoodDetails from "../pages/FoodDetails";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +26,8 @@ export const router = createBrowserRouter([
      },
      {
        path: "foodDetails/:id",
-       Component: Register
+       Component: FoodDetails,
+       loader: ()=> fetch("http://localhost:3000/foods")
      },
      {
        path: "foods",

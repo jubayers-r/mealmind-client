@@ -8,6 +8,7 @@ import FoodDetails from "../pages/FoodDetails";
 import Gallery from "../pages/Gallery";
 import FoodPurchase from "../pages/FoodPurchase";
 import MyOrders from "../pages/MyOrders";
+import AddFood from "../pages/AddFood";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
      {
        path: "myOrders",
        Component: MyOrders
+     },
+     {
+       path: "addFood",
+       Component: AddFood
      },
      {
        path: "purchase/:id",

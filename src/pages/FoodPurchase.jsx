@@ -8,7 +8,7 @@ const FoodPurchase = () => {
   const data = useLoaderData();
   const params = useParams().id;
   const selectedFood = data.find((food) => food._id == params);
-  const { food_name, purchase_count, price } = selectedFood;
+  const { food_name, price } = selectedFood;
   const { user } = use(AuthContext);
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const FoodPurchase = () => {
     const time = Date.now();
     const purchase_info = {
       ...rest,
-      price: parseInt(form.price.value),
+      price: parseFloat(form.price.value).toFixed(2),
       quantity: parseInt(form.quantity.value),
       purchase_time: time,
       food_id: params,
@@ -60,7 +60,7 @@ const FoodPurchase = () => {
           <label className="label">Price($)</label>
           <input
             name="price"
-            type="number"
+            type="string"
             className="input"
             placeholder="Price"
             defaultValue={price}

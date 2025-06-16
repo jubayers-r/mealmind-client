@@ -3,7 +3,7 @@ import moment from "moment";
 import Swal from "sweetalert2";
 
 const OrdersTable = ({ item }) => {
-  const { food_name, category, price, purchase_time, _id } = item;
+  const { food_name, price, purchase_time, _id, quantity } = item;
 
   const time = moment(purchase_time).format("llll");
   const handleCancel = (e) => {
@@ -36,6 +36,7 @@ const OrdersTable = ({ item }) => {
       <tr>
         <td className="border">{food_name}</td>
         <td className="border">{price}($)</td>
+        <td className="border">{quantity}</td>
         <td className="border">{time}</td>
         <td className="border">
           <button

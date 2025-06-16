@@ -21,9 +21,25 @@ const navLinks = (
     </NavLink>
   </>
 );
+const privet_navLinks = (
+  <>
+    <NavLink to={"/myFoods"}>
+      <p className="hover:text-[#00684a]">My Foods</p>
+    </NavLink>
+    <NavLink to={"/AddFood"}>
+      <p className="hover:text-[#00684a]">Add Food</p>
+    </NavLink>
+    <NavLink to={"/AddFood"}>
+      <p className="hover:text-[#00684a]">My Orders</p>
+    </NavLink>
+  </>
+);
 const authenticationLG = (
   <div className=" hidden sm:flex gap-4 ">
-    <Link to={"/register"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
+    <Link
+      to={"/register"}
+      className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl"
+    >
       Sign Up
     </Link>
     <Link to={"/login"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
@@ -33,7 +49,10 @@ const authenticationLG = (
 );
 const authenticationSM = (
   <div className="flex gap-2 my-2">
-    <Link to={"/register"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
+    <Link
+      to={"/register"}
+      className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl"
+    >
       Sign Up
     </Link>
     <Link to={"/login"} className="btn btn-xs sm:btn-md lg:btn-lg lg:text-xl">
@@ -93,7 +112,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-
+        {/* profile click starts */}
         <div className="navbar-end gap-7 ">
           <DarkModeToggle />
           {loading ? (
@@ -148,6 +167,10 @@ const Navbar = () => {
                     </div>
                   </div>
                   <hr className="text-gray-300" />
+                  <div className="sm:text-xl space-y-4 p-2 pb-0">
+
+                  {privet_navLinks}
+                  </div>
                   <button
                     onClick={() => logOut()}
                     className="lg:text-lg font-semibold hover:bg-gray-200 rounded-lg gap-2 p-2 flex items-center "
@@ -183,6 +206,7 @@ const Navbar = () => {
             authenticationLG
           )}
         </div>
+        {/* profile click ends */}
       </div>
     </div>
   );

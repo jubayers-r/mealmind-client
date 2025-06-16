@@ -8,7 +8,7 @@ const FoodPurchase = () => {
   const data = useLoaderData();
   const params = useParams().id;
   const selectedFood = data.find((food) => food._id == params);
-  const { food_name, img, purchase_count, price } = selectedFood;
+  const { food_name, purchase_count, price } = selectedFood;
   const { user } = use(AuthContext);
   const navigate = useNavigate();
 
@@ -23,6 +23,7 @@ const FoodPurchase = () => {
       price: parseInt(form.price.value),
       quantity: parseInt(form.quantity.value),
       purchase_time: time,
+      food_id: params,
     };
 
     axios
@@ -34,7 +35,7 @@ const FoodPurchase = () => {
             text: `x${form.quantity.value} ${form.food_name.value} is purchased Successfully`,
             icon: "success",
           });
-          navigate("/foods");
+          navigate("/myOrders");
       })
       .catch((error) => console.log(error));
   };

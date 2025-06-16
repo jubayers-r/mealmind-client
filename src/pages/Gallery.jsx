@@ -28,7 +28,8 @@ export default function Gallery() {
   return (
     <>
       <div className="space-y-3 my-3">
-        
+        {/* <div className="mask-[url(/stroke.png)] bg-[url(/bg-food.png)] ">
+        </div> */}
           <h3 className="text-3xl font-bold text-center">Gallery</h3>
         <p className="text-xl text-center">
           Click for fullscreen slideshow view.

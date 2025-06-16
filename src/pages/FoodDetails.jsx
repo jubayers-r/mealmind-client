@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useParams } from 'react-router';
 
 const FoodDetails = () => {
     const data = useLoaderData();
@@ -13,7 +13,9 @@ const FoodDetails = () => {
             <img src={img} alt="" className='rounded-xl w-full' />
             <h3 className='text-4xl font-bold text-center '>{food_name}</h3>
             </div>
+            <Link to={`/purchase/${params}`}>
             <button className='btn btn-block my-2 '>Purchase</button>
+            </Link>
         </div>
     );
 };

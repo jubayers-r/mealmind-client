@@ -5,6 +5,9 @@ import { Slide, Fade } from "react-awesome-reveal";
 import FoodCard from "./FoodCard";
 
 const TopFoods = ({ topFoods }) => {
+
+    
+
   const [text] = useTypewriter({
     words: [
       "Top Foods",

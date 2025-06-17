@@ -19,15 +19,19 @@ const OrdersTable = ({ item }) => {
     })
       .then((result) => {
         if (result.isConfirmed) {
-          axios.delete(`http://localhost:3000/myOrder/${_id}`).then((res) => {
-            res.data.acknowledged &&
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-              });
-          });
-        };
+          axios
+            .delete(
+              `https://restaurant-management-server-chi-five.vercel.app/myOrder/${_id}`
+            )
+            .then((res) => {
+              res.data.acknowledged &&
+                Swal.fire({
+                  title: "Deleted!",
+                  text: "Your file has been deleted.",
+                  icon: "success",
+                });
+            });
+        }
       })
       .catch((err) => console.log(err));
   };

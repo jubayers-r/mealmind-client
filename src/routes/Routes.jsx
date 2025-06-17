@@ -17,50 +17,62 @@ export const router = createBrowserRouter([
     Component: MainLayout,
     errorElement: <h1>not found</h1>,
     children: [
-     {
-       index: true,
-       Component: Home,
-       loader: ()=> fetch("http://localhost:3000/topFoods")
-     },
-     {
-       path: "login",
-       Component: LogIn
-     },
-     {
-       path: "register",
-       Component: Register
-     },
-     {
-       path: "gallery",
-       Component: Gallery
-     },
-     {
-       path: "myOrders",
-       Component: MyOrders
-     },
-     {
-       path: "addFood",
-       Component: AddFood
-     },
-     {
-       path: "myFoods",
-       Component: MyFoods
-     },
-     {
-       path: "purchase/:id",
-       Component: FoodPurchase,
-       loader: ()=> fetch("http://localhost:3000/foods")
-     },
-     {
-       path: "foodDetails/:id",
-       Component: FoodDetails,
-       loader: ()=> fetch("http://localhost:3000/foods")
-     },
-     {
-       path: "foods",
-       Component: AllFoods,
-       loader: ()=> fetch("http://localhost:3000/foods")
-     },
+      {
+        index: true,
+        Component: Home,
+        loader: () =>
+          fetch(
+            "https://restaurant-management-server-chi-five.vercel.app/topFoods"
+          ),
+      },
+      {
+        path: "login",
+        Component: LogIn,
+      },
+      {
+        path: "register",
+        Component: Register,
+      },
+      {
+        path: "gallery",
+        Component: Gallery,
+      },
+      {
+        path: "myOrders",
+        Component: MyOrders,
+      },
+      {
+        path: "addFood",
+        Component: AddFood,
+      },
+      {
+        path: "myFoods",
+        Component: MyFoods,
+      },
+      {
+        path: "purchase/:id",
+        Component: FoodPurchase,
+        loader: () =>
+          fetch(
+            "https://restaurant-management-server-chi-five.vercel.app/foods"
+          ),
+      },
+      {
+        path: "foodDetails/:id",
+        Component: FoodDetails,
+        loader: () =>
+          fetch(
+            "https://restaurant-management-server-chi-five.vercel.app/foods"
+          ),
+      },
+      {
+        path: "foods",
+        Component: AllFoods,
+        loader: () =>
+          fetch(
+            "https://restaurant-management-server-chi-five.vercel.app/foods"
+          ),
+      },
     ],
   },
 ]);

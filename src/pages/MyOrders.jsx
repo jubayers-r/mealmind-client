@@ -9,7 +9,9 @@ const MyOrders = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/myOrders?email=${user?.email}`)
+      .get(
+        `https://restaurant-management-server-chi-five.vercel.app/myOrders?email=${user?.email}`
+      )
       .then((res) => setData(res.data));
   }, [data]);
 

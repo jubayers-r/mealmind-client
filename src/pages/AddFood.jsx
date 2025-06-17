@@ -18,11 +18,14 @@ const AddFood = () => {
       price: parseFloat(form.price.value).toFixed(2),
       available_quantity: parseInt(form.available_quantity.value),
       purchase_count: 0,
-      creationTime: Date.now()
+      creationTime: Date.now(),
     };
 
     axios
-      .post("http://localhost:3000/post", food_info)
+      .post(
+        "https://restaurant-management-server-chi-five.vercel.app/post",
+        food_info
+      )
       .then((res) => {
         res.data.acknowledged &&
           Swal.fire({

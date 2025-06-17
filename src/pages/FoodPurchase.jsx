@@ -27,7 +27,10 @@ const FoodPurchase = () => {
     };
 
     axios
-      .post("http://localhost:3000/purchase", purchase_info)
+      .post(
+        "https://restaurant-management-server-chi-five.vercel.app/purchase",
+        purchase_info
+      )
       .then((res) => {
         res.data.acknowledged &&
           Swal.fire({
@@ -35,7 +38,7 @@ const FoodPurchase = () => {
             text: `x${form.quantity.value} ${form.food_name.value} is purchased Successfully`,
             icon: "success",
           });
-          navigate("/myOrders");
+        navigate("/myOrders");
       })
       .catch((error) => console.log(error));
   };

@@ -9,6 +9,7 @@ import Gallery from "../pages/Gallery";
 import FoodPurchase from "../pages/FoodPurchase";
 import MyOrders from "../pages/MyOrders";
 import AddFood from "../pages/AddFood";
+import MyFoods from "../pages/MyFoods";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
      {
        path: "addFood",
        Component: AddFood
+     },
+     {
+       path: "myFoods",
+       Component: MyFoods
      },
      {
        path: "purchase/:id",

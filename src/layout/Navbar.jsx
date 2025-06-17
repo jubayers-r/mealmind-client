@@ -26,10 +26,10 @@ const privet_navLinks = (
     <NavLink to={"/myFoods"}>
       <p className="hover:text-[#00684a]">My Foods</p>
     </NavLink>
-    <NavLink to={"/AddFood"}>
+    <NavLink to={"/addFood"}>
       <p className="hover:text-[#00684a]">Add Food</p>
     </NavLink>
-    <NavLink to={"/AddFood"}>
+    <NavLink to={"/myOrders"}>
       <p className="hover:text-[#00684a]">My Orders</p>
     </NavLink>
   </>

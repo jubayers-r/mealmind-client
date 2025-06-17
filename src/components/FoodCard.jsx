@@ -8,18 +8,18 @@ const FoodCard = ({ food }) => {
   const {
     img,
     food_name,
-    instructions,
+    description,
     available_quantity,
     category,
     purchase_count,
     _id,
   } = food;
   // truncation function for show more ux
-  //   const maxWords = 15;
-  //   const truncatedInstructions = instructions
-  //     ? instructions.split(" ").slice(0, maxWords).join(" ") +
-  //       (instructions.split(" ").length > maxWords ? "..." : "")
-  //     : "No instructions provided.";
+    const maxWords = 15;
+    const truncatedDescription = description
+      ? description.split(" ").slice(0, maxWords).join(" ") +
+        (description.split(" ").length > maxWords ? "..." : "")
+      : "No instructions provided.";
 
   return (
     <Slide direction="left">
@@ -46,7 +46,7 @@ const FoodCard = ({ food }) => {
                 {category}
               </p>
             </div>
-            {/* <p className="h-[40px]">{truncatedInstructions}</p> */}
+            <p className="h-[40px]">{truncatedDescription}</p>
           </div>
           <Link to={`/foodDetails/${_id}`}>
             <div className="grid grid-cols-2 gap-2 justify-center w-[80%] mx-auto">

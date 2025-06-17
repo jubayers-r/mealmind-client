@@ -16,7 +16,9 @@ const AddFood = () => {
     const food_info = {
       ...rest,
       price: parseFloat(form.price.value).toFixed(2),
-      quantity: parseInt(form.quantity.value),
+      available_quantity: parseInt(form.available_quantity.value),
+      purchase_count: 0,
+      creationTime: Date.now()
     };
 
     axios
@@ -25,7 +27,7 @@ const AddFood = () => {
         res.data.acknowledged &&
           Swal.fire({
             title: "Successful",
-            text: `x${form.quantity.value} ${form.food_name.value} is Added Successfully`,
+            text: `x${form.available_quantity.value} ${form.food_name.value} is Added Successfully`,
             icon: "success",
           });
         navigate("/myFoods");
@@ -63,7 +65,7 @@ const AddFood = () => {
         />
         <label className="label">Quantity</label>
         <input
-          name="quantity"
+          name="available_quantity"
           type="number"
           className="input"
           placeholder="Quantity"

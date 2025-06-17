@@ -50,11 +50,11 @@ const FoodCard = ({ food }) => {
           </div>
           <Link to={`/foodDetails/${_id}`}>
             <div className="grid grid-cols-2 gap-2 justify-center w-[80%] mx-auto">
-              <div className="btn">
-                <MdOutlineProductionQuantityLimits size={25} /> {available_quantity}
-              </div>
               <div className="btn ">
                 <BiPurchaseTag size={25} /> {purchase_count}
+              </div>
+              <div className="btn">
+                <MdOutlineProductionQuantityLimits size={25} /> {available_quantity}
               </div>
             </div>
           </Link>

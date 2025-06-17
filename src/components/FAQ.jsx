@@ -33,9 +33,9 @@ const FAQ = () => {
             }
           />
           <Accordion
-            Q={"Are my recipes public?"}
+            Q={"Are my foods public?"}
             A={
-              "Yes, Your Recipes are Public, You can Update or delete anytime you want"
+              "Yes, Your Foods are Public, You can Update or delete anytime you want"
             }
           />
         </div>

@@ -72,7 +72,7 @@ const Hero = () => {
           ))}
         </Swiper>
       </div>
-      <div className="absolute bottom-10 z-1 text-gray-500 w-full text-center space-y-5">
+      <div className="absolute bottom-10 z-1 sm:text-white  w-full text-center space-y-5">
         <h3 className="lg:text-5xl sm:text-3xl text-xl font-bold">
           Craft the Perfect Dining Experience.
         </h3>

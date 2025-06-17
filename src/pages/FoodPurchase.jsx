@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { Link, useLoaderData, useNavigate, useParams } from "react-router";
+import { Link, useLoaderData, useLocation, useNavigate, useParams } from "react-router";
 import { AuthContext } from "../context/authContext/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -43,6 +43,10 @@ const FoodPurchase = () => {
       .catch((error) => console.log(error));
   };
 
+  const location = useLocation();
+const queryParams = new URLSearchParams(location.search);
+const quantity = queryParams.get("qty");
+
   return (
     <div className="w-full flex justify-center">
       <form onSubmit={handleSubmit}>
@@ -78,7 +82,8 @@ const FoodPurchase = () => {
             className="input"
             placeholder="Purchase Quantity"
             min={1}
-            defaultValue={1}
+            defaultValue={quantity}
+            readOnly
             required
           />
 

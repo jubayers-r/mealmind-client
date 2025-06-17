@@ -21,8 +21,8 @@ const MyOrders = () => {
         <tr>
           <th className="border">Food Name</th>
           <th className="border">Price ($)</th>
-          <th className="border">Quantity</th>
-          <th className="border">Purchased at</th>
+          <th className="border">Qty</th>
+          <th className="border">On</th>
           <th className="border">(Click to) Delete</th>
         </tr>
       </thead>

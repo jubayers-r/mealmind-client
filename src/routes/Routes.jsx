@@ -10,6 +10,7 @@ import FoodPurchase from "../pages/FoodPurchase";
 import MyOrders from "../pages/MyOrders";
 import AddFood from "../pages/AddFood";
 import MyFoods from "../pages/MyFoods";
+import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
   {
@@ -39,19 +40,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "myOrders",
-        Component: MyOrders,
+        element: <PrivetRoute><MyOrders/></PrivetRoute>,
       },
       {
         path: "addFood",
-        Component: AddFood,
+        element: <PrivetRoute><AddFood/></PrivetRoute>,
       },
       {
         path: "myFoods",
-        Component: MyFoods,
+        element: <PrivetRoute><MyFoods/></PrivetRoute>,
       },
       {
         path: "purchase/:id",
-        Component: FoodPurchase,
+        element: <PrivetRoute><FoodPurchase/></PrivetRoute>,
         loader: () =>
           fetch(
             "https://restaurant-management-server-chi-five.vercel.app/foods"

@@ -11,6 +11,7 @@ import MyOrders from "../pages/MyOrders";
 import AddFood from "../pages/AddFood";
 import MyFoods from "../pages/MyFoods";
 import PrivetRoute from "./PrivetRoute";
+import UpdateFood from "../pages/UpdateFood";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,14 @@ export const router = createBrowserRouter([
       {
         path: "addFood",
         element: <PrivetRoute><AddFood/></PrivetRoute>,
+      },
+      {
+        path: "updateFood/:id",
+        element: <PrivetRoute><UpdateFood/></PrivetRoute>,
+        loader: () =>
+          fetch(
+            "https://restaurant-management-server-chi-five.vercel.app/foods"
+          ),
       },
       {
         path: "myFoods",

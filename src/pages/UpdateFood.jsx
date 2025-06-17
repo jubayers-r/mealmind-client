@@ -1,14 +1,26 @@
-import React, { use } from "react";
-import { AuthContext } from "../context/authContext/AuthContext";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import React, { use } from "react";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import Swal from "sweetalert2";
+import { AuthContext } from "../context/authContext/AuthContext";
 
-const AddFood = () => {
-  const { user } = use(AuthContext);
+const UpdateFood = () => {
   const navigate = useNavigate();
+  const { user } = use(AuthContext);
+  const { id } = useParams();
+  const data = useLoaderData();
+  const selectedData = data?.find((food) => food._id == id);
+  const {
+    food_name,
+    img,
+    description,
+    available_quantity,
+    price,
+    category,
+    origin,
+  } = selectedData;
 
-  const handlePost = (e) => {
+  const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
@@ -22,15 +34,12 @@ const AddFood = () => {
     };
 
     axios
-      .post(
-        "https://restaurant-management-server-chi-five.vercel.app/post",
-        food_info
-      )
+      .put(`https://restaurant-management-server-chi-five.vercel.app/update/${id}`, food_info)
       .then((res) => {
         res.data.acknowledged &&
           Swal.fire({
             title: "Successful",
-            text: `x${form.available_quantity.value} ${form.food_name.value} is Added Successfully`,
+            text: `Updated Successfully`,
             icon: "success",
           });
         navigate("/myFoods");
@@ -39,9 +48,9 @@ const AddFood = () => {
   };
 
   return (
-    <form onSubmit={handlePost} >
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 w-xs mx-auto" >
-        <legend className="fieldset-legend">Add Food</legend>
+    <form onSubmit={handleUpdate}>
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto">
+        <legend className="fieldset-legend">Update Food Info</legend>
 
         <label className="label">Food Name</label>
         <input
@@ -49,6 +58,7 @@ const AddFood = () => {
           type="text"
           className="input"
           placeholder="Food Name"
+          defaultValue={food_name}
           required
         />
         <label className="label">Food Image</label>
@@ -57,6 +67,7 @@ const AddFood = () => {
           type="text"
           className="input"
           placeholder="Food Image"
+          defaultValue={img}
         />
         <label className="label">Short Description</label>
         <input
@@ -64,6 +75,7 @@ const AddFood = () => {
           type="text"
           className="input"
           placeholder="Short Description"
+          defaultValue={description}
           required
         />
         <label className="label">Quantity</label>
@@ -72,8 +84,8 @@ const AddFood = () => {
           type="number"
           className="input"
           placeholder="Quantity"
-          defaultValue={1}
           min={1}
+          defaultValue={available_quantity}
           required
         />
         <label className="label">Price ($)</label>
@@ -82,6 +94,7 @@ const AddFood = () => {
           type="string"
           className="input"
           placeholder="Price"
+          defaultValue={price}
           required
         />
         <label className="label">Category</label>
@@ -90,6 +103,7 @@ const AddFood = () => {
           type="text"
           className="input"
           placeholder="eg. Dessert/Snacks/Main Course"
+          defaultValue={category}
           required
         />
         <label className="label">Origin (Country)</label>
@@ -98,6 +112,7 @@ const AddFood = () => {
           type="text"
           className="input"
           placeholder="Origin"
+          defaultValue={origin}
         />
         <label className="label">Added By</label>
         <input
@@ -118,11 +133,11 @@ const AddFood = () => {
         />
 
         <button className="btn btn-neutral mt-4" type="submit">
-          Post
+          Update
         </button>
       </fieldset>
     </form>
   );
 };
 
-export default AddFood;
+export default UpdateFood;

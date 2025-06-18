@@ -1,17 +1,4 @@
 import React, { useState } from "react";
-// import Lightbox from "yet-another-react-lightbox";
-// import "yet-another-react-lightbox/styles.css";
-// import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-// const Gallery = () => {
-//   const [open, setOpen] = useState(false);
-//   const [auto, setAuto] = useState(false);
-
-//   return (
-
-//   );
-// };
-
-// export default Gallery;
 
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -28,20 +15,18 @@ export default function Gallery() {
   return (
     <>
       <div className="space-y-3 my-3">
-        {/* <div className="mask-[url(/stroke.png)] bg-[url(/bg-food.png)] ">
-        </div> */}
           <h3 className="text-3xl font-bold text-center">Gallery</h3>
         <p className="text-xl text-center">
           Click for fullscreen slideshow view.
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-2 w-9/11 mx-auto">
+      <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-2 w-9/11 mx-auto">
         {images.map((img, i) => (
           <img
             src={img}
             key={i}
-            className="h-100 object-cover"
+            className="h-100 object-cover w-full"
             onClick={() => setIndex(i)}
           />
         ))}

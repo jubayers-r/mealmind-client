@@ -16,9 +16,22 @@ const AllFoods = () => {
         className="input w-full my-5 text-center text-2xl"
         onChange={(e) => setQuery(e.target.value.toLowerCase())}
       />
-      <div className="flex flex-col sm:flex-row justify-between items-center ">
-        <h3 className="text-2xl sm:text-3xl font-bold text-center my-5 w-full">
-          The taste you never had before
+      <div
+        className="flex flex-col sm:flex-row justify-between items-center "
+
+      >
+      {/* <div
+        className="flex flex-col sm:flex-row justify-between items-center  bg-[url('/bg-food.jpg')]
+  bg-cover bg-center
+  text-transparent
+  bg-clip-text
+  mask-repeat-no-repeat
+  mask-size-contain
+  mask-center "
+      > */}
+
+        <h3 className="text-2xl sm:text-3xl font-bold text-center my-5 w-full ">
+          The taste you never had before The taste you never had before
         </h3>
       </div>
 

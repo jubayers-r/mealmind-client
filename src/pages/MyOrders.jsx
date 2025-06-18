@@ -16,7 +16,7 @@ const MyOrders = () => {
   }, [data]);
 
   return (
-    <table className="table-fixed w-9/11 mx-auto text-center border my-5">
+    <table className="table-fixed w-9/11 mx-auto text-center border my-5 dark:text-white">
       <thead>
         <tr>
           <th className="border">Food Name</th>

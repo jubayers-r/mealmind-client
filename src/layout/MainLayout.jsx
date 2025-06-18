@@ -5,10 +5,10 @@ import Footer from "./Footer";
 
 const MainLayout = () => {
   return (
- <div className="min-h-screen flex flex-col">
+ <div className="min-h-screen flex flex-col dark:bg-black">
       <Navbar />
       <hr className="text-gray-200" />
-      <main className="flex-grow flex flex-col justify-center mb-15">
+      <main className="flex-grow flex flex-col justify-center pb-15">
         <Outlet />
       </main>
       <Footer />

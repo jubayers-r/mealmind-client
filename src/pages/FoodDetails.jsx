@@ -28,15 +28,15 @@ const FoodDetails = () => {
 
   return (
     <div className="w-5/11 mx-auto">
-      <p className="text-2xl font-semibold text-center py-2">
+      <p className="text-2xl font-semibold text-center py-2 dark:text-white">
         This food was purchased {purchase_count} times
       </p>
-      <div className=" border rounded-xl p-5 ">
-        <img src={img} alt={""} className="rounded-xl w-full" />
-        <h3 className="text-4xl font-bold text-center ">{food_name}</h3>
+      <div className=" border rounded-xl p-5 dark:text-white">
+        <img src={img} alt={""} className="rounded-xl w-full " />
+        <h3 className="text-4xl font-bold text-center dark:text-white">{food_name}</h3>
       </div>
       {/* box starts */}
-      <p className="text-2xl font-semibold text-center py-2">
+      <p className="text-2xl font-semibold text-center py-2 dark:text-white">
         Available Stock: {available_quantity} {food_name}
       </p>
       <form className="w-full my-2">

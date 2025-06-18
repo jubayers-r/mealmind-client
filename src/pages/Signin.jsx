@@ -14,6 +14,7 @@ const Signin = () => {
     setError,
     setUser,
     forgotPassword,
+    user,
   } = use(AuthContext);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
@@ -44,7 +45,7 @@ const Signin = () => {
             .then(() => {
               navigate(stateData ? stateData : "/");
               Swal.fire({
-                title: "User Login Successful",
+                title: "User Signin Successful",
                 text: "You are redirected to your desired page",
                 icon: "success",
               });

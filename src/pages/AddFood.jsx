@@ -39,15 +39,17 @@ const AddFood = () => {
   };
 
   return (
-    <form onSubmit={handlePost} >
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 w-xs mx-auto" >
-        <legend className="fieldset-legend">Add Food</legend>
+    <form onSubmit={handlePost}>
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto dark:bg-slate-600 dark:text-white">
+        <legend className="fieldset-legend text-2xl font-bold dark:text-white">
+          Add Food
+        </legend>
 
         <label className="label">Food Name</label>
         <input
           name="food_name"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Food Name"
           required
         />
@@ -55,14 +57,14 @@ const AddFood = () => {
         <input
           name="img"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Food Image"
         />
         <label className="label">Short Description</label>
         <input
           name="description"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Short Description"
           required
         />
@@ -70,7 +72,7 @@ const AddFood = () => {
         <input
           name="available_quantity"
           type="number"
-          className="input"
+          className="input dark:text-black"
           placeholder="Quantity"
           defaultValue={1}
           min={1}
@@ -80,7 +82,7 @@ const AddFood = () => {
         <input
           name="price"
           type="string"
-          className="input"
+          className="input dark:text-black"
           placeholder="Price"
           required
         />
@@ -88,7 +90,7 @@ const AddFood = () => {
         <input
           name="category"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="eg. Dessert/Snacks/Main Course"
           required
         />
@@ -96,14 +98,14 @@ const AddFood = () => {
         <input
           name="origin"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Origin"
         />
         <label className="label">Added By</label>
         <input
           name="author_name"
           type="Name"
-          className="input"
+          className="input dark:text-black"
           placeholder="Author Name"
           defaultValue={user.displayName}
           readOnly
@@ -111,7 +113,7 @@ const AddFood = () => {
         <input
           name="author_email"
           type="email"
-          className="input"
+          className="input dark:text-black"
           placeholder="Author Email"
           defaultValue={user.email}
           readOnly

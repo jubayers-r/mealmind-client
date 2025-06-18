@@ -21,7 +21,7 @@ const TopFoods = ({ topFoods }) => {
 
   return (
     <div className="w-9/11 mx-auto">
-      <h1 className="sm:text-4xl text-2xl font-bold text-center my-5 min-h-[50px] ">
+      <h1 className="sm:text-4xl text-2xl font-bold text-center my-5 min-h-[50px] dark:text-white">
         {text}
       </h1>
       <Slide direction="left">

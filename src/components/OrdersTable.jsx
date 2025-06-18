@@ -44,7 +44,7 @@ const OrdersTable = ({ item }) => {
         <td className="border">{time}</td>
         <td className="border">
           <button
-            className="btn btn-block hover:text-red-600 text-2xl"
+            className="btn btn-block dark:bg-gray-900 dark:text-white hover:text-red-600 text-2xl"
             onClick={handleCancel}
           >
             X

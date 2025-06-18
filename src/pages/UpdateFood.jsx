@@ -34,7 +34,10 @@ const UpdateFood = () => {
     };
 
     axios
-      .put(`https://restaurant-management-server-chi-five.vercel.app/update/${id}`, food_info)
+      .put(
+        `https://restaurant-management-server-chi-five.vercel.app/update/${id}`,
+        food_info
+      )
       .then((res) => {
         res.data.acknowledged &&
           Swal.fire({
@@ -49,14 +52,16 @@ const UpdateFood = () => {
 
   return (
     <form onSubmit={handleUpdate}>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto">
-        <legend className="fieldset-legend">Update Food Info</legend>
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto dark:bg-slate-600 dark:text-white">
+        <legend className="fieldset-legend text-2xl font-bold dark:text-white">
+          Update Food Info
+        </legend>
 
         <label className="label">Food Name</label>
         <input
           name="food_name"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Food Name"
           defaultValue={food_name}
           required
@@ -65,7 +70,7 @@ const UpdateFood = () => {
         <input
           name="img"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Food Image"
           defaultValue={img}
         />
@@ -73,7 +78,7 @@ const UpdateFood = () => {
         <input
           name="description"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Short Description"
           defaultValue={description}
           required
@@ -82,7 +87,7 @@ const UpdateFood = () => {
         <input
           name="available_quantity"
           type="number"
-          className="input"
+          className="input dark:text-black"
           placeholder="Quantity"
           min={1}
           defaultValue={available_quantity}
@@ -92,7 +97,7 @@ const UpdateFood = () => {
         <input
           name="price"
           type="string"
-          className="input"
+          className="input dark:text-black"
           placeholder="Price"
           defaultValue={price}
           required
@@ -101,7 +106,7 @@ const UpdateFood = () => {
         <input
           name="category"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="eg. Dessert/Snacks/Main Course"
           defaultValue={category}
           required
@@ -110,7 +115,7 @@ const UpdateFood = () => {
         <input
           name="origin"
           type="text"
-          className="input"
+          className="input dark:text-black"
           placeholder="Origin"
           defaultValue={origin}
         />
@@ -118,7 +123,7 @@ const UpdateFood = () => {
         <input
           name="author_name"
           type="Name"
-          className="input"
+          className="input dark:text-black"
           placeholder="Author Name"
           defaultValue={user.displayName}
           readOnly
@@ -126,7 +131,7 @@ const UpdateFood = () => {
         <input
           name="author_email"
           type="email"
-          className="input"
+          className="input dark:text-black"
           placeholder="Author Email"
           defaultValue={user.email}
           readOnly

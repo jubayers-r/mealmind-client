@@ -13,7 +13,7 @@ const AllFoods = () => {
     <div className="w-9/11 mx-auto ">
       <input
         placeholder="Search"
-        className="input w-full my-5 text-center text-2xl"
+        className="input w-full my-5 text-center text-2xl bg-gray-100 dark:bg-gray-300"
         onChange={(e) => setQuery(e.target.value.toLowerCase())}
       />
       <div
@@ -30,7 +30,7 @@ const AllFoods = () => {
   mask-center "
       > */}
 
-        <h3 className="text-2xl sm:text-3xl font-bold text-center my-5 w-full ">
+        <h3 className="text-2xl sm:text-3xl font-bold text-center my-5 w-full dark:text-white">
           The taste you never had before The taste you never had before
         </h3>
       </div>

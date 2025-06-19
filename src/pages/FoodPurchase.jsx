@@ -50,14 +50,15 @@ const quantity = queryParams.get("qty");
   return (
     <div className="w-full flex justify-center">
       <form onSubmit={handleSubmit}>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-          <legend className="fieldset-legend">Food Purchase</legend>
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto dark:bg-slate-600 dark:text-white">
+        <legend className="fieldset-legend text-2xl font-bold dark:text-white">
+            Food Purchase</legend>
 
           <label className="label">Food Name</label>
           <input
             name="food_name"
             type="text"
-            className="input"
+            className="input dark:text-black"
             placeholder="Food Name"
             defaultValue={food_name}
             readOnly
@@ -68,7 +69,7 @@ const quantity = queryParams.get("qty");
           <input
             name="price"
             type="string"
-            className="input"
+            className="input dark:text-black"
             placeholder="Price"
             defaultValue={price}
             readOnly
@@ -79,7 +80,7 @@ const quantity = queryParams.get("qty");
           <input
             name="quantity"
             type="number"
-            className="input"
+            className="input dark:text-black"
             placeholder="Purchase Quantity"
             min={1}
             defaultValue={quantity}
@@ -91,7 +92,7 @@ const quantity = queryParams.get("qty");
           <input
             name="buyer_name"
             type="text"
-            className="input"
+            className="input dark:text-black"
             defaultValue={user.displayName}
             readOnly
           />
@@ -100,7 +101,7 @@ const quantity = queryParams.get("qty");
           <input
             name="buyer_email"
             type="text"
-            className="input"
+            className="input dark:text-black"
             defaultValue={user.email}
             readOnly
           />

@@ -14,6 +14,7 @@ const Signin = () => {
     setError,
     setUser,
     forgotPassword,
+    quantity,
   } = use(AuthContext);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
@@ -42,7 +43,10 @@ const Signin = () => {
           })
             .then((res) => res.json())
             .then(() => {
-              navigate(stateData ? stateData : "/");
+              navigate({
+                pathname: stateData || "/",
+                search: `?qty=${quantity}`,
+              });
               Swal.fire({
                 title: "User Signin Successful",
                 text: "You are redirected to your desired page",

@@ -3,14 +3,13 @@ import { Link, useLoaderData, useLocation, useParams } from "react-router";
 import { AuthContext } from "../context/authContext/AuthContext";
 
 const FoodDetails = () => {
-  const { user } = use(AuthContext);
+  const { user, quantity, setQuantity } = use(AuthContext);
   const data = useLoaderData();
   const params = useParams().id;
   const selectedFood = data.find((food) => food._id == params);
   const { food_name, img, purchase_count, available_quantity, author_email } =
     selectedFood;
   const [isDisabled, setIsDisabled] = useState(false);
-  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     if (
@@ -33,7 +32,7 @@ const FoodDetails = () => {
       </p>
       <div className=" border rounded-xl p-5 dark:text-white">
         <img src={img} alt={""} className="rounded-xl w-full " />
-        <h3 className="text-4xl font-bold text-center dark:text-white">
+        <h3 className="text-xl sm:text-4xl font-bold text-center dark:text-white">
           {food_name}
         </h3>
       </div>
@@ -59,7 +58,7 @@ const FoodDetails = () => {
         <Link
           to={{
             pathname:
-              author_email === user?.email
+              author_email && author_email === user?.email
                 ? `/updateFood/${params}`
                 : quantity == 0 || quantity > available_quantity
                 ? location.pathname
@@ -68,7 +67,9 @@ const FoodDetails = () => {
           }}
         >
           <button
-            disabled={isDisabled}
+            disabled={
+              isDisabled || quantity <= 0 || quantity > available_quantity
+            }
             className={`btn disabled:bg-gray-400 disabled:cursor-not-allowed ${
               user && author_email === user?.email ? "w-full" : "w-1/2"
             } `}

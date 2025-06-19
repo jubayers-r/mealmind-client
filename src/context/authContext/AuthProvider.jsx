@@ -11,14 +11,12 @@ import {
   signOut,
 } from "firebase/auth";
 
-
-
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [stateData, setStateData] = useState(null);
+  const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState(null);
-
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -32,8 +30,10 @@ const AuthProvider = ({ children }) => {
     setError(null);
   }, []);
 
-  const logIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
-  const register = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+  const logIn = (email, password) =>
+    signInWithEmailAndPassword(auth, email, password);
+  const register = (email, password) =>
+    createUserWithEmailAndPassword(auth, email, password);
   const logOut = () => signOut(auth);
   const forgotPassword = (email) => sendPasswordResetEmail(auth, email);
   const googleLogin = () => signInWithPopup(auth, new GoogleAuthProvider());
@@ -52,10 +52,13 @@ const AuthProvider = ({ children }) => {
     setError,
     setUser,
     forgotPassword,
+    quantity,
+    setQuantity,
   };
 
-  return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;
-

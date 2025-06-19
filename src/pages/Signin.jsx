@@ -14,7 +14,6 @@ const Signin = () => {
     setError,
     setUser,
     forgotPassword,
-    user,
   } = use(AuthContext);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);

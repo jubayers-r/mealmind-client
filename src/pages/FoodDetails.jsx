@@ -42,7 +42,9 @@ const FoodDetails = () => {
         Available Stock: {available_quantity} {food_name}
       </p>
       <form className="w-full my-2">
-        {author_email !== user?.email ? (
+        {user && author_email === user?.email ? (
+          ""
+        ) : (
           <input
             className="input w-1/2"
             placeholder="Quantity"
@@ -52,8 +54,6 @@ const FoodDetails = () => {
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
           />
-        ) : (
-          ""
         )}
 
         <Link

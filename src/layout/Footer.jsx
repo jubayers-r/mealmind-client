@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
       <footer className=" bg-base-300 py-10">
-        <div className="w-9/11 footer place-items-center text-base-content p-10 grid xl:grid-cols-4 grid-rows-3 xl:grid-rows-1 mx-auto  ">
+        <div className="w-10/11 footer place-items-center text-base-content p-10 grid xl:grid-cols-4 grid-rows-3 xl:grid-rows-1 mx-auto  ">
           <div className="text-md sm:text-xl text-center">
             <h3 className="font-bold font-[Poetsen_One] text-lg sm:text-2xl w-full">
               MealMind

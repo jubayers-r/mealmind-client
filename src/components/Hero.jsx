@@ -42,7 +42,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-fit">
+    <div className="relative h-fit w-10/11 mx-auto my-15 ">
       {/* Tablet/Mobile Swiper */}
       <div className="block md:hidden">
         <Swiper {...swiperProps}>
@@ -51,7 +51,7 @@ const Hero = () => {
               <img
                 src={src}
                 alt={`Tab ${idx + 1}`}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-2xl"
               />
             </SwiperSlide>
           ))}
@@ -66,7 +66,7 @@ const Hero = () => {
               <img
                 src={src}
                 alt={`Desktop ${idx + 1}`}
-                className="w-full h-[700px] object-cover"
+                className="w-full h-[700px] object-cover rounded-2xl"
               />
             </SwiperSlide>
           ))}

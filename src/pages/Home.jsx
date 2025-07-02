@@ -4,6 +4,7 @@ import TopFoods from '../components/TopFoods';
 import Banner from '../components/Banner';
 import FAQ from '../components/FAQ';
 import { useLoaderData } from 'react-router';
+import NewsletterCard from '../components/NewsletterCard';
 
 const Home = () => {
     const topFoods = useLoaderData();
@@ -11,8 +12,8 @@ const Home = () => {
         <div>
             <Hero/>
             <TopFoods topFoods={topFoods}/>
-            <Banner/>
             <FAQ/>
+            <NewsletterCard/>
         </div>
     );
 };

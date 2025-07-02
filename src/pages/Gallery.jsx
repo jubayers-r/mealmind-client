@@ -15,13 +15,15 @@ export default function Gallery() {
   return (
     <>
       <div className="space-y-3 my-3">
-          <h3 className="text-3xl font-bold text-center dark:text-white">Gallery</h3>
+        <h3 className="text-3xl font-bold text-center dark:text-white">
+          Gallery
+        </h3>
         <p className="text-xl text-center dark:text-white">
           Click for fullscreen slideshow view.
         </p>
       </div>
 
-      <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-2 w-9/11 mx-auto">
+      <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-2 w-10/11 mx-auto">
         {images.map((img, i) => (
           <img
             src={img}

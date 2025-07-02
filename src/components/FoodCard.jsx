@@ -38,31 +38,36 @@ const FoodCard = ({ food }) => {
             />
           </figure>
           <div className="card-body">
-            <div className="flex flex-col sm:flex-row sm:gap-5 gap-2 items-center">
-              <h2 className="card-title">{food_name}</h2>
+            <div className="flex flex-col sm:flex-row justify-between  items-center">
+              <h2 className="card-title">{food_name} </h2>
+              <div className="flex rounded-2xl border p-1 hover:bg-red-400 hover:text-white hover:cursor-default">
+                <MdOutlineProductionQuantityLimits size={20} />
+                {available_quantity} left
+              </div>
+
               {/* <div className="badge badge-secondary ">{cuisineType}</div> */}
             </div>
             <div className="card-actions justify-end grid grid-cols-2 2xl:grid-cols-3">
-              <p className="font-semibold border p-1 rounded-lg hover:bg-green-600 hover:text-white text-center">
+              <p className="font-semibold border py-1 rounded-lg hover:bg-green-600 hover:text-white text-center hover:cursor-default">
                 {category}
               </p>
             </div>
             <p className="h-[40px]">{truncatedDescription}</p>
           </div>
-          <Link to={`/foodDetails/${_id}`}>
-            <div className="grid grid-cols-2 gap-2 justify-center w-[80%] mx-auto">
-              <div className="btn ">
+          <div className="flex gap-2  mx-auto mb-4">
+            <Link to={`/foodDetails/${_id}`}>
+              <div className="btn hover:bg-[#00ed64] hover:rounded-full hover:border hover:border-black ">
                 <BiPurchaseTag size={25} /> {purchase_count} times
               </div>
-              <div className="btn">
-                <MdOutlineProductionQuantityLimits size={25} />{" "}
-                {available_quantity} left
-              </div>
-            </div>
-          </Link>
-          <div className="flex justify-center my-2">
-            <Link to={location.pathname === "/myFoods" ? `/updateFood/${_id}` : `/foodDetails/${_id}`} >
-              <button className="btn hover:bg-[#00ed64] hover:rounded-full hover:border hover:border-black btn-lg flex w-fit my-3">
+            </Link>
+            <Link
+              to={
+                location.pathname === "/myFoods"
+                  ? `/updateFood/${_id}`
+                  : `/foodDetails/${_id}`
+              }
+            >
+              <button className="btn hover:bg-[#00ed64] hover:rounded-full hover:border hover:border-black  flex w-fit">
                 {location.pathname === "/myFoods" ? "Update" : "See Details"}
               </button>
             </Link>

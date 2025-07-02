@@ -1,19 +1,19 @@
 import { Link } from "react-router";
-import { useTypewriter } from "react-simple-typewriter";
+// import { useTypewriter } from "react-simple-typewriter";
 import { Slide, Fade } from "react-awesome-reveal";
 import FoodCard from "./FoodCard";
 
 const TopFoods = ({ topFoods }) => {
-  const [text] = useTypewriter({
-    words: [
-      "Top Foods",
-      "Most Loved Plates",
-      "Crave-Worthy Dishes",
-      "Tasty Treasures",
-      "Best Picks",
-    ],
-    loop: 0,
-  });
+  // const [text] = useTypewriter({
+  //   words: [
+  //     "Top Foods",
+  //     "Most Loved Plates",
+  //     "Crave-Worthy Dishes",
+  //     "Tasty Treasures",
+  //     "Best Picks",
+  //   ],
+  //   loop: 0,
+  // });
 
   return (
     <div className="w-10/11 mx-auto">

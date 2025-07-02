@@ -5,6 +5,7 @@ import Banner from '../components/Banner';
 import FAQ from '../components/FAQ';
 import { useLoaderData } from 'react-router';
 import NewsletterCard from '../components/NewsletterCard';
+import Offers from '../components/Offers';
 
 const Home = () => {
     const topFoods = useLoaderData();
@@ -12,6 +13,7 @@ const Home = () => {
         <div>
             <Hero/>
             <TopFoods topFoods={topFoods}/>
+            <Offers topFoods={topFoods}/>
             <FAQ/>
             <NewsletterCard/>
         </div>

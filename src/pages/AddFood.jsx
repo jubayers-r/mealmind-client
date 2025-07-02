@@ -40,7 +40,7 @@ const AddFood = () => {
 
   return (
     <form onSubmit={handlePost}>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto dark:bg-slate-600 dark:text-white">
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto dark:bg-slate-600 dark:text-white my-10">
         <legend className="fieldset-legend text-2xl font-bold dark:text-white">
           Add Food
         </legend>

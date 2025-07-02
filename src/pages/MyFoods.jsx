@@ -15,7 +15,7 @@ const MyFoods = () => {
   }, [data]);
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 w-10/11 mx-auto my-2">
+    <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 w-10/11 mx-auto my-10 ">
       {data.map((item, i) => (
         <FoodCard key={i} food={item} />
       ))}

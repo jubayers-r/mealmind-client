@@ -41,9 +41,9 @@ const AllFoods = () => {
   mask-center "
       > */}
 
-        <div className="flex flex-col lg:flex-row justify-between items-center my-5 ">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center my-5 ">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-5 dark:text-white ">
-            Taste Your Buds Out
+            Taste You Never Had
           </h3>
           <div className="grid md:flex gap-5 py-1 ">
             <div className="flex gap-2 items-center">

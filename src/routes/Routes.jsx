@@ -12,6 +12,7 @@ import AddFood from "../pages/AddFood";
 import MyFoods from "../pages/MyFoods";
 import PrivetRoute from "./PrivetRoute";
 import UpdateFood from "../pages/UpdateFood";
+import Support from "../pages/Support";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: "gallery",
         Component: Gallery,
+      },
+      {
+        path: "support",
+        Component: Support,
       },
       {
         path: "myOrders",

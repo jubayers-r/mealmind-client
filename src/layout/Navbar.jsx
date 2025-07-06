@@ -19,6 +19,13 @@ const navLinks = (
     <NavLink to={"/gallery"}>
       <p className="hover:text-[#00684a]">Gallery</p>
     </NavLink>
+    <NavLink to={"/support"}>
+      <p className="hover:text-[#00684a]">Support</p>
+    </NavLink>
+     <NavLink to={"/addFood"}>
+      <p className="hover:text-[#00684a]">Add Food</p>
+    </NavLink>
+
   </>
 );
 const privet_navLinks = (
@@ -26,9 +33,7 @@ const privet_navLinks = (
     <NavLink to={"/myFoods"}>
       <p className="hover:text-[#00684a]">My Foods</p>
     </NavLink>
-    <NavLink to={"/addFood"}>
-      <p className="hover:text-[#00684a]">Add Food</p>
-    </NavLink>
+
     <NavLink to={"/myOrders"}>
       <p className="hover:text-[#00684a]">My Orders</p>
     </NavLink>
